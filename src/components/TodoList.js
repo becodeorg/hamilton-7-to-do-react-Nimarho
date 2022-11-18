@@ -18,7 +18,7 @@ function ListTodo(todoItem) {
 
 function TodoList() {
     const initialTodos = ["My first todo", "My second todo"];
-    const [todos, setTodos] = useState(initialTodos);
+    const [todos, /*setTodos*/] = useState(initialTodos);
     return (
         <ul>
             {todos.map((todo) =>
