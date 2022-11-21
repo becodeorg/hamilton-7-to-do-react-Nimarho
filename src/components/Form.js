@@ -1,20 +1,38 @@
 
-//import { useState } from "react";
-
+import React,{ useRef } from "react";
+import { v4 as uuidv4 } from 'uuid';
 // function addToDoItem() {
     
 // }
 
-function Form() {
+export default function Form(prop) {
+    const inputRef = useRef();
+
+    function clickHandler() {
+        const inputElement = inputRef.current;
+        console.log(inputElement.value);
+        const newArr =JSON.parse(JSON.stringify(prop.todos));
+        const newTask = {
+            id : uuidv4(),
+            task : inputElement.value,
+            done : false
+        };
+        newArr.push(newTask);
+        prop.setTodos(newArr);
+    }
+
     return (
-        <form /*onSubmit={addToDoItem}*/>
+        <div className="py-20">
             <input
-            /*onChange={handleChange}
-            value={inputValue}*/
+            className="p-1 w-full max-w-[250px] rounded-md border-2 border-slate-500"
+            ref={inputRef}
+            type="text"
             placeholder='type a new todo' />
-            <button type="submit">Add</button>
-        </form>
+            <button
+            className="bg-blue-400 rounded-md p-2 text-white mt-5 font-bold" 
+            onClick={clickHandler}
+            type="submit"
+            >Add Todo</button>
+        </div>
     );
 }
-
-export default Form;

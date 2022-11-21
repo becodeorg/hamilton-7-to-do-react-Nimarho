@@ -1,30 +1,14 @@
-import React,{useState} from "react";
-
-function ListTodo(todoItem) {
-    const [isDone, setIsDone] = useState(false);
-    const handleChange = () => {
-        setIsDone(current => !current);
-    }
-    
-    return  (<li className={isDone ? 'line-through' : ''}>
-                <input 
-                    type="checkbox"
-                    onChange={handleChange}
-                />
-                {todoItem.value}
-            </li>);
-}
+import React from "react";
+import ListTodo from "./ListTodo";
 
 
-function TodoList() {
-    const initialTodos = ["My first todo", "My second todo"];
-    const [todos, /*setTodos*/] = useState(initialTodos);
+function TodoList(prop) {
     return (
-        <ul>
-            {todos.map((todo) =>
-                <ListTodo key={todo.toString()} value={todo} testValue={"hello world"} />
+        <div>
+            {prop.todos.map((todo) =>
+                <ListTodo key={todo.id} value={todo.task} isDone={todo.done} todos={prop.todos} id={todo.id} setTodos={prop.setTodos}/>
             )}
-        </ul>
+        </div>
     );
 }
 
