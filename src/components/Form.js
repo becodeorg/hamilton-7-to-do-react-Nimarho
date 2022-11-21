@@ -1,16 +1,12 @@
 
 import React,{ useRef } from "react";
 import { v4 as uuidv4 } from 'uuid';
-// function addToDoItem() {
-    
-// }
 
 export default function Form(prop) {
     const inputRef = useRef();
 
     function clickHandler() {
         const inputElement = inputRef.current;
-        console.log(inputElement.value);
         const newArr =JSON.parse(JSON.stringify(prop.todos));
         const newTask = {
             id : uuidv4(),
