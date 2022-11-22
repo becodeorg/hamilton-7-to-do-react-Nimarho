@@ -21,7 +21,7 @@ function ListTodo(todoItem) {
                     checked={todoItem.isDone? true : false}
                 />
                 <label
-                for={todoItem.id}
+                htmlFor={todoItem.id}
                 className={todoItem.isDone ? 'ml-2 line-through' : 'ml-2 no-underline'}>
                 {todoItem.value}
                 </label>
