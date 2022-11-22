@@ -13,7 +13,6 @@ function App() {
     const list = JSON.parse(localStorage.getItem(LSKEY+".todos"));
     if(list && list.length > 0){
       setTodos(list);
-      
     }
   },[]);
   
