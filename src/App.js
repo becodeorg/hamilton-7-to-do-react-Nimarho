@@ -2,6 +2,7 @@ import './App.css';
 import Title from './components/Title';
 import Form from './components/Form';
 import TodoList from './components/TodoList';
+import SubTitle from './components/SubTitle';
 //import data from './components/Data.json';
 import React,{useState, useEffect} from 'react';
 
@@ -23,7 +24,8 @@ function App() {
   return (
     <div>
       <Title />
-      <main className='px-10'>
+      <main className='max-w-lg mx-auto my-10 bg-gradient-to-r from-indigo-100 p-8 rounded-xl shadow shadow-slate-300'>
+        <SubTitle />
         <Form setTodos={setTodos} todos={todos} />
         <TodoList setTodos={setTodos} todos={todos} />
       </main>
