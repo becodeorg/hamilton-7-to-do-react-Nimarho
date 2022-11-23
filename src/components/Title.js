@@ -1,6 +1,7 @@
-function Title() {
+function Title(props) {
+    const show = props.mobile ? "hidden" : "text-4xl font-bold bg-gray-800 p-10 text-white";
     return (
-        <h1 className="text-4xl font-bold bg-gray-800 p-10 text-white">To Do List</h1>
+        <h1 className={show} >To Do List</h1>
     );
 }
 
