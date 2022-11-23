@@ -20,6 +20,7 @@ function ListTodo(todoItem) {
     return  (<div className="bg-sky-400 w-full max-w-[250px]">
                 <input 
                     id={todoItem.id}
+                    className=""
                     name="task"
                     type="checkbox"
                     onChange={() => handleChange(todoItem.id)}
